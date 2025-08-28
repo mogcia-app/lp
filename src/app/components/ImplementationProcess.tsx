@@ -185,7 +185,7 @@ export default function ImplementationProcess() {
 
       {/* サポート体制 */}
       <div>
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">24/7 包括的サポート体制</h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">24/7 サポート体制</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <SupportFeature
             title="24/7 テクニカルサポート"
@@ -242,7 +242,7 @@ export default function ImplementationProcess() {
 
       {/* トレーニングプログラム */}
       <div>
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">包括的なトレーニングプログラム</h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">トレーニングプログラム</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
             <div className="text-center mb-6">

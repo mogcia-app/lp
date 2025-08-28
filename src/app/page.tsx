@@ -12,42 +12,40 @@ import ESGValue from './components/ESGValue'
 import OEMBusiness from './components/OEMBusiness'
 import { DashboardSection } from './components/DashboardPreview'
 import HeroDashboard from './components/HeroDashboard'
+import PricingSection from './components/PricingSection'
+
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="bg-white/98 backdrop-blur-sm shadow-sm border-b border-navy-50 sticky top-0 z-50 transition-all duration-300">
+    <>
+      {/* Header */}
+      <header className="bg-white/95 backdrop-blur-sm shadow-sm border-b border-navy-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center py-3">
-            {/* Logo & Brand */}
+          <div className="flex justify-between items-center py-4">
             <div className="flex items-center group cursor-pointer">
               <div className="w-8 h-8 bg-gradient-to-r from-navy-600 to-navy-800 rounded-lg mr-3 flex items-center justify-center group-hover:from-navy-700 group-hover:to-navy-900 transition-all duration-300 shadow-md group-hover:shadow-lg">
                 <svg className="w-4 h-4 text-white group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
-              <h1 className="text-lg font-semibold text-navy-900 group-hover:text-navy-700 transition-colors duration-300">AI Business Solutions</h1>
+              <h1 className="text-xl font-semibold text-navy-900 group-hover:text-navy-700 transition-colors duration-300">AI Business Solutions</h1>
             </div>
-
-            {/* Navigation Links */}
             <div className="hidden lg:flex items-center space-x-1">
               {[
-                { href: '#home', label: 'ホーム' },
-                { href: '#vision', label: 'ビジョン' },
-                { href: '#solutions', label: 'ソリューション' },
-                { href: '#dashboard', label: 'デモ' },
+                { href: '/sections/vision', label: 'ビジョン' },
+                { href: '/sections/solutions', label: 'ソリューション' },
+                { href: '/sections/pricing', label: '料金' },
+                { href: '#cases', label: 'デモ' },
                 { href: '#cases', label: '事例' },
                 { href: '#technology', label: '技術' },
                 { href: '#comparison', label: '比較' },
                 { href: '#implementation', label: '導入' },
                 { href: '#esg', label: 'ESG' },
-                { href: '#oem', label: 'OEM' },
-                { href: '#contact', label: 'お問い合わせ' }
+                { href: '#oem', label: 'OEM' }
               ].map((link) => (
-                <a 
+                <a
                   key={link.href}
-                  href={link.href} 
+                  href={link.href}
                   className="px-3 py-2 text-sm text-navy-600 hover:text-navy-900 transition-all duration-200 font-medium rounded-md hover:bg-navy-50 relative group whitespace-nowrap"
                 >
                   {link.label}
@@ -55,65 +53,76 @@ export default function HomePage() {
                 </a>
               ))}
             </div>
-
-            {/* CTA Button */}
-            <button 
-              onClick={() => window.location.href = '/tool/home'}
-              className="group bg-gradient-to-r from-navy-600 to-navy-800 text-white px-4 py-2 rounded-lg hover:from-navy-700 hover:to-navy-900 transition-all duration-300 shadow-md hover:shadow-lg font-medium text-sm transform hover:-translate-y-0.5 hover:scale-105"
-            >
-              <span className="flex items-center">
-                体験してみる
-                <svg className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </span>
-            </button>
+            <div className="flex items-center space-x-3">
+              <button
+                onClick={() => window.location.href = '/tool/home'}
+                className="group bg-gradient-to-r from-navy-600 to-navy-800 text-white px-4 py-2 rounded-lg hover:from-navy-700 hover:to-navy-900 transition-all duration-300 shadow-md hover:shadow-lg font-medium text-sm transform hover:-translate-y-0.5 hover:scale-105"
+              >
+                <span className="flex items-center">
+                  体験してみる
+                  <svg className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+              </button>
+              <button
+                onClick={() => window.location.href = '/sections/contact'}
+                className="group bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-md hover:shadow-lg font-medium text-sm transform hover:-translate-y-0.5 hover:scale-105"
+              >
+                <span className="flex items-center">
+                  お問い合わせ
+                  <svg className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 8l-5.5 5.5-1.96-1.96a3 3 0 00-4.24 0L4 16.59V20h3.41l5.5-5.5 1.96 1.96a3 3 0 004.24 0L20 16.59V20h3.41l-5.5-5.5 1.96-1.96a3 3 0 000-4.24L20 8z" />
+                  </svg>
+                </span>
+              </button>
+            </div>
           </div>
         </div>
-      </nav>
+      </header>
 
       {/* Hero Section */}
-      <section id="home" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-navy-50 via-white to-navy-100 relative overflow-hidden">
+      <section id="home" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-navy-50 via-white to-navy-100 relative overflow-hidden">
         {/* 背景の装飾要素 */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-navy-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-navy-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute -top-32 -right-32 w-64 h-64 bg-navy-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float"></div>
+          <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-navy-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float" style={{ animationDelay: '2s' }}></div>
         </div>
         
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div className="animate-fade-in">
-              <div className="inline-flex items-center px-4 py-2 bg-navy-100 text-navy-800 rounded-full text-sm font-medium mb-6 hover:bg-navy-200 transition-all duration-300 cursor-pointer group">
+              <div className="inline-flex items-center px-3 py-2 bg-navy-100 text-navy-800 rounded-full text-sm font-medium mb-4 hover:bg-navy-200 transition-all duration-300 cursor-pointer group">
                 <svg className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
                 次世代AIソリューション
               </div>
-              <h1 className="text-5xl lg:text-6xl font-bold text-navy-900 mb-6 leading-tight animate-slide-up">
+              <h1 className="text-4xl lg:text-5xl font-bold text-navy-900 mb-4 leading-tight animate-slide-up">
                 企業の未来を
                 <span className="bg-gradient-to-r from-navy-600 to-navy-800 bg-clip-text text-transparent hover:from-navy-700 hover:to-navy-900 transition-all duration-500">AIで創造</span>
                 する
               </h1>
-              <p className="text-xl text-navy-700 mb-8 leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
+              <p className="text-lg text-navy-700 mb-6 leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
                 従業員の創造性を最大限に引き出し、企業の競争力を根本から変革します。
                 AIが日常業務を自動化し、人間はより価値のある仕事に集中できる未来を実現します。
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+              <div className="flex flex-col sm:flex-row gap-3 mb-6 animate-slide-up" style={{ animationDelay: '0.4s' }}>
                 <button 
                   onClick={() => window.location.href = '/tool/home'}
-                  className="group bg-gradient-to-r from-navy-600 to-navy-800 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-navy-700 hover:to-navy-900 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 animate-glow"
+                  className="group bg-gradient-to-r from-navy-600 to-navy-800 text-white px-6 py-3 rounded-lg text-base font-semibold hover:from-navy-700 hover:to-navy-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 animate-glow"
                 >
                   <span className="flex items-center justify-center">
                     未来を体験する
-                    <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </span>
                 </button>
-                <button className="group border-2 border-navy-300 text-navy-700 px-8 py-4 rounded-xl text-lg font-semibold hover:border-navy-600 hover:text-navy-800 hover:bg-navy-50 transition-all duration-300 bg-white/90 backdrop-blur-sm transform hover:-translate-y-1">
+                <button className="group border-2 border-navy-300 text-navy-700 px-6 py-3 rounded-lg text-base font-semibold hover:border-navy-600 hover:text-navy-800 hover:bg-navy-50 transition-all duration-300 bg-white/90 backdrop-blur-sm transform hover:-translate-y-1">
                   <span className="flex items-center justify-center">
                     導入事例を見る
-                    <svg className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                     </svg>
@@ -122,26 +131,26 @@ export default function HomePage() {
               </div>
               
               {/* Stats with Animated Counter */}
-              <div className="grid grid-cols-3 gap-6 animate-slide-up" style={{ animationDelay: '0.6s' }}>
+              <div className="grid grid-cols-3 gap-4 animate-slide-up" style={{ animationDelay: '0.6s' }}>
                 <div className="text-center group cursor-pointer hover:scale-105 transition-transform duration-300">
                   <AnimatedCounter 
                     end={500} 
                     suffix="+" 
-                    className="text-2xl font-bold text-navy-600 mb-1 group-hover:text-navy-700 transition-colors duration-300"
+                    className="text-xl font-bold text-navy-600 mb-1 group-hover:text-navy-700 transition-colors duration-300"
                   />
-                  <div className="text-sm text-navy-600 group-hover:text-navy-700 transition-colors duration-300">導入企業</div>
+                  <div className="text-xs text-navy-600 group-hover:text-navy-700 transition-colors duration-300">導入企業</div>
                 </div>
                 <div className="text-center group cursor-pointer hover:scale-105 transition-transform duration-300">
                   <AnimatedCounter 
                     end={40} 
                     suffix="%" 
-                    className="text-2xl font-bold text-navy-600 mb-1 group-hover:text-navy-700 transition-colors duration-300"
+                    className="text-xl font-bold text-navy-600 mb-1 group-hover:text-navy-700 transition-colors duration-300"
                   />
-                  <div className="text-sm text-navy-600 group-hover:text-navy-700 transition-colors duration-300">効率向上</div>
+                  <div className="text-xs text-navy-600 group-hover:text-navy-700 transition-colors duration-300">効率向上</div>
                 </div>
                 <div className="text-center group cursor-pointer hover:scale-105 transition-transform duration-300">
-                  <div className="text-2xl font-bold text-navy-600 mb-1 group-hover:text-navy-700 transition-colors duration-300">24/7</div>
-                  <div className="text-sm text-navy-600 group-hover:text-navy-700 transition-colors duration-300">サポート</div>
+                  <div className="text-xl font-bold text-navy-600 mb-1 group-hover:text-navy-700 transition-colors duration-300">24/7</div>
+                  <div className="text-xs text-navy-600 group-hover:text-navy-700 transition-colors duration-300">サポート</div>
                 </div>
               </div>
             </div>
@@ -154,17 +163,17 @@ export default function HomePage() {
       </section>
 
       {/* Future Vision Section */}
-      <section id="vision" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">AI導入後の企業の未来</h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+      <section id="vision" className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">AI導入後の企業の未来</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               従業員は創造的な仕事に集中し、AIが日常業務を自動化する。
               そんな理想的な企業の姿を、今すぐ実現できます。
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
             <div>
               <h3 className="text-3xl font-bold text-gray-900 mb-6">従業員の働き方が根本から変わる</h3>
               <div className="space-y-6">
@@ -234,11 +243,11 @@ export default function HomePage() {
       </section>
 
       {/* Solutions Section with Hover Cards */}
-      <section id="solutions" className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">AIが変える企業の業務効率</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+      <section id="solutions" className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">AIが変える企業の業務効率</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               6つの主要カテゴリで、企業のあらゆる業務をAIで最適化します
             </p>
           </div>
@@ -368,11 +377,11 @@ export default function HomePage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">導入企業が実感する効果</h2>
-            <p className="text-xl text-gray-600">AI活用で業務効率が劇的に向上します</p>
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">導入企業が実感する効果</h2>
+            <p className="text-lg text-gray-600">AI活用で業務効率が劇的に向上します</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -413,11 +422,11 @@ export default function HomePage() {
       <DashboardSection />
 
       {/* Case Studies Section */}
-      <section id="cases" className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">導入事例</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+      <section id="cases" className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">導入事例</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               業界・企業規模を問わず、AI活用で成果を上げている企業の事例をご紹介します
             </p>
           </div>
@@ -540,7 +549,7 @@ export default function HomePage() {
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900 mb-3">中企業（51-200名）</h4>
                 <ul className="text-sm text-gray-600 space-y-2 text-left">
-                  <li>• 包括的なAIソリューション</li>
+                  <li>• AIソリューション</li>
                   <li>• 営業・マーケティング支援</li>
                   <li>• 導入期間：2-3週間</li>
                   <li>• 初期投資：月額15,000円</li>
@@ -577,11 +586,11 @@ export default function HomePage() {
       </section>
 
       {/* Technology Details Section */}
-      <section id="technology" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
+      <section id="technology" className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">技術的な詳細</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               最新のAI技術、セキュリティ対策、既存システムとの統合方法について詳しくご説明します
             </p>
           </div>
@@ -591,11 +600,11 @@ export default function HomePage() {
       </section>
 
       {/* Comparison Analysis Section */}
-      <section id="comparison" className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">比較・競合分析</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+      <section id="comparison" className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">比較・競合分析</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               他社サービスとの違い、導入方式の比較、コストの詳細内訳を分かりやすくご説明します
             </p>
           </div>
@@ -605,25 +614,34 @@ export default function HomePage() {
       </section>
 
       {/* Implementation Process Section */}
-      <section id="implementation" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">導入プロセス</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              導入プロセスを段階的に説明し、スムーズな導入を実現します
-            </p>
-          </div>
+      <section id="implementation" className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          
           
           <ImplementationProcess />
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section id="pricing" className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">料金プラン</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              企業規模やニーズに応じて、柔軟な価格設定をご提供しています
+            </p>
+          </div>
+          
+          <PricingSection />
+        </div>
+      </section>
+
       {/* ESG Value Section */}
-      <section id="esg" className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">社会的価値・ESG対応</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+      <section id="esg" className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">社会的価値・ESG対応</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               AI活用による環境配慮、働き方改革、ダイバーシティ対応で持続可能な社会の実現に貢献します
             </p>
           </div>
@@ -633,24 +651,19 @@ export default function HomePage() {
       </section>
 
       {/* OEM Business Section */}
-      <section id="oem" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">OEM事業・卸販売</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              自社ブランドでAIツールを販売したい企業様向けに、5000円からの手頃な価格でOEMサービスを提供しています
-            </p>
-          </div>
+      <section id="oem" className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+         
           
           <OEMBusiness />
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-blue-600 to-indigo-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">今すぐAI活用を始めませんか？</h2>
-          <p className="text-xl text-blue-100 mb-10 max-w-3xl mx-auto">
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-indigo-700">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">今すぐAI活用を始めませんか？</h2>
+          <p className="text-lg text-blue-100 mb-8 max-w-3xl mx-auto">
             <AnimatedCounter end={500} suffix="+" className="font-bold" />社以上の企業が既に導入し、業務効率の向上を実感しています。
             無料相談で、AIがもたらす変化を体験してください。
           </p>
@@ -665,13 +678,22 @@ export default function HomePage() {
         </div>
       </section>
 
+
+
+      {/* AI Chatbot */}
+      <AIChatbot />
+
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center mb-4">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg mr-3"></div>
+                <div className="w-8 h-8 bg-gradient-to-r from-navy-600 to-navy-800 rounded-lg mr-3 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
                 <h3 className="text-xl font-bold">AI Business Solutions</h3>
               </div>
               <p className="text-gray-400">企業のAI活用を加速させ、業務効率の向上を実現します。</p>
@@ -679,28 +701,28 @@ export default function HomePage() {
             <div>
               <h4 className="text-lg font-semibold mb-4">ソリューション</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">文書作成・編集</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">営業・マーケティング</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">人材・教育</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">データ分析</a></li>
+                <li><a href="/sections/solutions" className="hover:text-white transition-colors">文書作成・編集</a></li>
+                <li><a href="/sections/solutions" className="hover:text-white transition-colors">営業・マーケティング</a></li>
+                <li><a href="/sections/solutions" className="hover:text-white transition-colors">人材・教育</a></li>
+                <li><a href="/sections/solutions" className="hover:text-white transition-colors">データ分析</a></li>
               </ul>
             </div>
             <div>
               <h4 className="text-lg font-semibold mb-4">会社</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">会社概要</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">導入事例</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">ブログ</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">採用情報</a></li>
+                <li><a href="#cases" className="hover:text-white transition-colors">導入事例</a></li>
+                <li><a href="/sections/vision" className="hover:text-white transition-colors">未来ビジョン</a></li>
+                <li><a href="#esg" className="hover:text-white transition-colors">ESG対応</a></li>
+                <li><a href="#oem" className="hover:text-white transition-colors">OEM事業</a></li>
               </ul>
             </div>
             <div>
               <h4 className="text-lg font-semibold mb-4">サポート</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">ヘルプセンター</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">お問い合わせ</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">導入サポート</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">トレーニング</a></li>
+                <li><a href="#implementation" className="hover:text-white transition-colors">導入サポート</a></li>
+                <li><a href="#contact" className="hover:text-white transition-colors">お問い合わせ</a></li>
+                <li><a href="/sections/pricing" className="hover:text-white transition-colors">料金プラン</a></li>
+                <li><a href="/tool/home" className="hover:text-white transition-colors">デモ体験</a></li>
               </ul>
             </div>
           </div>
@@ -709,9 +731,6 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
-
-      {/* AI Chatbot */}
-      <AIChatbot />
-    </div>
+    </>
   )
 }

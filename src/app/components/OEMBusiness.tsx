@@ -129,7 +129,7 @@ export default function OEMBusiness() {
         <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">OEM事業でAIツールを卸販売</h2>
         <p className="text-xl text-gray-600 text-center mb-12 max-w-4xl mx-auto">
           自社ブランドでAIツールを販売したい企業様向けに、OEMサービスを提供しています。
-          技術的なサポートから、ブランディング、カスタマイズまで、包括的にサポートいたします。
+                     技術的なサポートから、ブランディング、カスタマイズまで、サポートいたします。
           価格は個別にお見積もりいたします。
         </p>
         
@@ -183,7 +183,7 @@ export default function OEMBusiness() {
 
           <OEMFeature
             title="技術サポート"
-            description="導入から運用まで包括的な技術サポート"
+            description="導入から運用まで技術サポート"
             icon={
               <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -226,92 +226,6 @@ export default function OEMBusiness() {
               "マーケティング素材の準備"
             ]}
           />
-        </div>
-      </div>
-
-      {/* 5000円からの価格体系 */}
-      <div>
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">5000円からの手頃な価格体系</h2>
-        <p className="text-xl text-gray-600 text-center mb-12 max-w-4xl mx-auto">
-          企業規模やニーズに応じて、柔軟な価格設定をご提供しています。
-          初期費用を抑えて、段階的にスケールアップできるプラン設計です。
-        </p>
-        
-        <div className="grid md:grid-cols-3 gap-6">
-          <PricingTier
-            name="スタータープラン"
-            price="¥5,000"
-            description="小規模チーム向けの基本機能"
-            features={[
-              "基本AI機能（文書作成・編集）",
-              "最大10ユーザー",
-              "基本的なサポート",
-              "月次レポート",
-              "基本的なカスタマイズ"
-            ]}
-            color="bg-blue-500"
-          />
-
-          <PricingTier
-            name="ビジネスプラン"
-            price="¥15,000"
-            description="中規模企業向けの標準機能"
-            popular={true}
-            features={[
-              "全AI機能（文書・営業・分析）",
-              "最大50ユーザー",
-              "優先サポート",
-              "週次レポート",
-              "カスタマイズ対応",
-              "API利用"
-            ]}
-            color="bg-green-500"
-          />
-
-          <PricingTier
-            name="エンタープライズプラン"
-            price="¥50,000"
-            description="大規模企業向けの包括機能"
-            features={[
-              "全機能 + 高度な分析",
-              "無制限ユーザー",
-              "24/7専任サポート",
-              "リアルタイムレポート",
-              "フルカスタマイズ",
-              "専用サーバー"
-            ]}
-            color="bg-purple-500"
-          />
-        </div>
-
-        {/* カスタムプラン */}
-        <div className="mt-12 bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">カスタムプラン</h3>
-            <p className="text-gray-600 mb-6">
-              特定の要件や大規模な導入をご検討の場合は、カスタムプランをご提案いたします
-            </p>
-            <div className="grid md:grid-cols-3 gap-6 mb-6">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600 mb-2">OEM対応</div>
-                <div className="text-sm text-gray-600">ブランドカスタマイズ</div>
-                <div className="text-lg font-bold text-blue-600 mt-2">お問い合わせください</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-green-600 mb-2">大規模導入</div>
-                <div className="text-sm text-gray-600">1000名以上対応</div>
-                <div className="text-lg font-bold text-green-600 mt-2">お問い合わせください</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-purple-600 mb-2">専用開発</div>
-                <div className="text-sm text-gray-600">独自機能の開発</div>
-                <div className="text-lg font-bold text-purple-600 mt-2">お問い合わせください</div>
-              </div>
-            </div>
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-              カスタムプランのお問い合わせ
-            </button>
-          </div>
         </div>
       </div>
 
