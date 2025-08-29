@@ -192,7 +192,7 @@ export default function OEMBusiness() {
             color="bg-gradient-to-r from-purple-500 to-pink-500"
             benefits={[
               "専任エンジニアのアサイン",
-              "24/7技術サポート",
+              "24時間365日技術サポート",
               "定期的なシステム監視",
               "アップデート・メンテナンス"
             ]}
@@ -294,8 +294,8 @@ export default function OEMBusiness() {
             <div className="text-gray-600">技術サポート</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-orange-600 mb-2">24/7</div>
-            <div className="text-gray-600">サポート体制</div>
+            <div className="text-3xl font-bold text-orange-600 mb-2">24時間</div>
+            <div className="text-gray-600">365日サポート</div>
           </div>
         </div>
       </div>

@@ -128,7 +128,7 @@ export default function ComparisonAnalysis() {
     "日本語対応",
     "カスタマイズ可能",
     "API提供",
-    "24/7サポート",
+    "24時間365日サポート",
     "導入サポート",
     "トレーニング提供",
     "データ暗号化",
@@ -172,7 +172,7 @@ export default function ComparisonAnalysis() {
     { name: "基本ライセンス", cost: "¥400,000/月", description: "200名までの基本機能" },
     { name: "追加ユーザー", cost: "¥2,000/月", description: "201名目以降の追加料金" },
     { name: "初期設定費", cost: "¥800,000", description: "初回導入時の設定費用" },
-    { name: "サポート費", cost: "¥100,000/月", description: "24/7専任サポートサービス" },
+    { name: "サポート費", cost: "¥100,000/月", description: "24時間365日専任サポートサービス" },
     { name: "カスタマイズ費", cost: "¥500,000", description: "業務に合わせたカスタマイズ" },
     { name: "統合費", cost: "¥300,000", description: "既存システムとの統合" }
   ]

@@ -284,8 +284,8 @@ export default function TechnologyDetails() {
             <div className="text-gray-600">レスポンス時間</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-purple-600 mb-2">24/7</div>
-            <div className="text-gray-600">サポート体制</div>
+            <div className="text-3xl font-bold text-purple-600 mb-2">24時間</div>
+            <div className="text-gray-600">365日サポート</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-orange-600 mb-2">1週間</div>

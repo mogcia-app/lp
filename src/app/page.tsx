@@ -149,8 +149,8 @@ export default function HomePage() {
                   <div className="text-xs text-navy-600 group-hover:text-navy-700 transition-colors duration-300">効率向上</div>
                 </div>
                 <div className="text-center group cursor-pointer hover:scale-105 transition-transform duration-300">
-                  <div className="text-xl font-bold text-navy-600 mb-1 group-hover:text-navy-700 transition-colors duration-300">24/7</div>
-                  <div className="text-xs text-navy-600 group-hover:text-navy-700 transition-colors duration-300">サポート</div>
+                  <div className="text-xl font-bold text-navy-600 mb-1 group-hover:text-navy-700 transition-colors duration-300">24時間</div>
+                  <div className="text-xs text-navy-600 group-hover:text-navy-700 transition-colors duration-300">365日サポート</div>
                 </div>
               </div>
             </div>

@@ -185,10 +185,10 @@ export default function ImplementationProcess() {
 
       {/* サポート体制 */}
       <div>
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">24/7 サポート体制</h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">24時間365日サポート体制</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <SupportFeature
-            title="24/7 テクニカルサポート"
+            title="テクニカルサポート"
             description="いつでも技術的な問題を解決"
             icon={
               <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
