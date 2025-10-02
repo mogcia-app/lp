@@ -96,16 +96,15 @@ export default function HomePage() {
                 <svg className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                次世代AIソリューション
+                AIソリューション
               </div>
-              <h1 className="text-4xl lg:text-5xl font-bold text-navy-900 mb-4 leading-tight animate-slide-up">
+              <h1 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-4 leading-tight animate-slide-up">
                 企業の未来を
                 <span className="bg-gradient-to-r from-navy-600 to-navy-800 bg-clip-text text-transparent hover:from-navy-700 hover:to-navy-900 transition-all duration-500">AIで創造</span>
                 する
               </h1>
               <p className="text-lg text-navy-700 mb-6 leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                従業員の創造性を最大限に引き出し、企業の競争力を根本から変革します。
-                AIが日常業務を自動化し、人間はより価値のある仕事に集中できる未来を実現します。
+              AIがあなたの業務をサポート。<br />必要な情報をすぐに教えてくれるから、仕事がもっとスムーズになる
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mb-6 animate-slide-up" style={{ animationDelay: '0.4s' }}>
                 <button 
@@ -113,7 +112,7 @@ export default function HomePage() {
                   className="group bg-gradient-to-r from-navy-600 to-navy-800 text-white px-6 py-3 rounded-lg text-base font-semibold hover:from-navy-700 hover:to-navy-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 animate-glow"
                 >
                   <span className="flex items-center justify-center">
-                    未来を体験する
+                    デモ体験する
                     <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
@@ -134,15 +133,7 @@ export default function HomePage() {
               <div className="grid grid-cols-3 gap-4 animate-slide-up" style={{ animationDelay: '0.6s' }}>
                 <div className="text-center group cursor-pointer hover:scale-105 transition-transform duration-300">
                   <AnimatedCounter 
-                    end={500} 
-                    suffix="+" 
-                    className="text-xl font-bold text-navy-600 mb-1 group-hover:text-navy-700 transition-colors duration-300"
-                  />
-                  <div className="text-xs text-navy-600 group-hover:text-navy-700 transition-colors duration-300">導入企業</div>
-                </div>
-                <div className="text-center group cursor-pointer hover:scale-105 transition-transform duration-300">
-                  <AnimatedCounter 
-                    end={40} 
+                    end={70} 
                     suffix="%" 
                     className="text-xl font-bold text-navy-600 mb-1 group-hover:text-navy-700 transition-colors duration-300"
                   />
@@ -150,7 +141,11 @@ export default function HomePage() {
                 </div>
                 <div className="text-center group cursor-pointer hover:scale-105 transition-transform duration-300">
                   <div className="text-xl font-bold text-navy-600 mb-1 group-hover:text-navy-700 transition-colors duration-300">24時間</div>
-                  <div className="text-xs text-navy-600 group-hover:text-navy-700 transition-colors duration-300">365日サポート</div>
+                  <div className="text-xs text-navy-600 group-hover:text-navy-700 transition-colors duration-300">サポート対応</div>
+                </div>
+                <div className="text-center group cursor-pointer hover:scale-105 transition-transform duration-300">
+                  <div className="text-xl font-bold text-navy-600 mb-1 group-hover:text-navy-700 transition-colors duration-300">1分</div>
+                  <div className="text-xs text-navy-600 group-hover:text-navy-700 transition-colors duration-300">操作簡単で開始</div>
                 </div>
               </div>
             </div>

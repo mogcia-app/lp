@@ -3,124 +3,126 @@
 import { useState, useEffect } from 'react'
 
 export default function HeroDashboard() {
-  const [currentTask, setCurrentTask] = useState(0)
-  const [isProcessing, setIsProcessing] = useState(true)
+  const [currentMessage, setCurrentMessage] = useState(0)
+  const [isTyping, setIsTyping] = useState(false)
 
-  const tasks = [
-    { name: '営業提案書作成', status: '完了', color: 'green', time: '2分前' },
-    { name: '顧客データ分析', status: '処理中', color: 'blue', time: '現在' },
-    { name: '月次レポート生成', status: '待機中', color: 'yellow', time: '次の予定' },
-    { name: '社内ナレッジ検索', status: '完了', color: 'green', time: '5分前' }
+  const chatMessages = [
+    { 
+      type: 'user', 
+      text: '来月の営業戦略を考えたいのですが、どのようなアプローチが効果的でしょうか？',
+      time: '14:32'
+    },
+    { 
+      type: 'ai', 
+      text: '営業戦略の立案についてお手伝いします。まず、過去3ヶ月の売上データと顧客の行動パターンを分析して、最適なアプローチを提案させていただきます。',
+      time: '14:32'
+    },
+    { 
+      type: 'user', 
+      text: '特に新規開拓に力を入れたいです',
+      time: '14:33'
+    },
+    { 
+      type: 'ai', 
+      text: '承知いたしました。新規開拓のための戦略を以下のように提案します：\n\n1. ターゲット企業の選定\n2. パーソナライズされたアプローチ\n3. 効果的なフォローアップ戦略\n\n詳細な分析レポートを作成いたします。',
+      time: '14:33'
+    }
   ]
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTask((prev) => (prev + 1) % tasks.length)
-    }, 3000)
+      setCurrentMessage((prev) => (prev + 1) % chatMessages.length)
+      setIsTyping(true)
+      setTimeout(() => setIsTyping(false), 1500)
+    }, 4000)
 
     return () => clearInterval(interval)
-  }, [tasks.length])
-
-  useEffect(() => {
-    const processingInterval = setInterval(() => {
-      setIsProcessing(prev => !prev)
-    }, 2000)
-
-    return () => clearInterval(processingInterval)
-  }, [])
-
-  const getStatusColor = (color: string) => {
-    switch (color) {
-      case 'green': return 'bg-green-500'
-      case 'blue': return 'bg-blue-500'
-      case 'yellow': return 'bg-yellow-500'
-      default: return 'bg-gray-500'
-    }
-  }
+  }, [chatMessages.length])
 
   return (
     <div className="relative">
-      {/* ブラウザウィンドウ風のフレーム */}
+      {/* チャットアプリ風のフレーム */}
       <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
-        {/* ブラウザヘッダー */}
-        <div className="bg-navy-100 px-4 py-3 border-b border-navy-200">
-          <div className="flex items-center space-x-2">
-            <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-            <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-            <div className="ml-4 text-sm text-navy-700 font-medium">AI Business Dashboard</div>
+        {/* チャットヘッダー */}
+        <div className="bg-gradient-to-r from-navy-600 to-navy-800 px-4 py-3">
+          <div className="flex items-center space-x-3">
+            <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
+            </div>
+            <div>
+              <h3 className="text-white font-semibold">AI Business Assistant</h3>
+              <p className="text-white/80 text-sm">オンライン</p>
+            </div>
+            <div className="ml-auto flex items-center space-x-2">
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <span className="text-white/80 text-sm">応答中</span>
+            </div>
           </div>
         </div>
 
-        {/* ダッシュボードコンテンツ */}
-        <div className="p-6">
-          {/* ヘッダー部分 */}
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-navy-600 to-navy-800 rounded-xl flex items-center justify-center">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="font-semibold text-navy-900">AIアシスタント</h3>
-                <p className="text-sm text-navy-600">業務効率化中...</p>
-              </div>
-            </div>
-            <div className="text-right">
-              <div className="text-2xl font-bold text-navy-600">85%</div>
-              <div className="text-xs text-navy-500">効率向上</div>
-            </div>
-          </div>
-
-          {/* 主要指標 */}
-          <div className="grid grid-cols-3 gap-3 mb-6">
-            <div className="bg-blue-50 rounded-lg p-3 text-center">
-              <div className="text-lg font-bold text-blue-600">2.5h</div>
-              <div className="text-xs text-blue-600">時間短縮</div>
-            </div>
-            <div className="bg-green-50 rounded-lg p-3 text-center">
-              <div className="text-lg font-bold text-green-600">12</div>
-              <div className="text-xs text-green-600">自動化タスク</div>
-            </div>
-            <div className="bg-purple-50 rounded-lg p-3 text-center">
-              <div className="text-lg font-bold text-purple-600">98.5%</div>
-              <div className="text-xs text-purple-600">精度</div>
-            </div>
-          </div>
-
-          {/* タスク状況 */}
-          <div className="space-y-3">
-            <h4 className="text-sm font-medium text-gray-700 mb-3">現在のタスク状況</h4>
-            {tasks.map((task, index) => (
-              <div 
-                key={index}
-                className={`flex items-center p-3 rounded-lg transition-all duration-300 ${
-                  index === currentTask ? 'bg-blue-50 border border-blue-200' : 'bg-gray-50'
-                }`}
-              >
-                <div className={`w-2 h-2 ${getStatusColor(task.color)} rounded-full mr-3`}></div>
-                <div className="flex-1">
-                  <div className="text-sm font-medium text-gray-700">{task.name}</div>
-                  <div className="text-xs text-gray-500">{task.time}</div>
-                </div>
-                <div className="text-xs px-2 py-1 rounded-full bg-gray-100 text-gray-600">
-                  {task.status}
+        {/* チャットメッセージエリア */}
+        <div className="h-80 overflow-y-auto p-4 space-y-4 bg-gray-50">
+          {chatMessages.slice(0, currentMessage + 1).map((message, index) => (
+            <div key={index} className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}>
+              <div className={`max-w-xs lg:max-w-sm ${message.type === 'user' ? 'order-2' : 'order-1'}`}>
+                {message.type === 'ai' && (
+                  <div className="flex items-center mb-1">
+                    <div className="w-6 h-6 bg-gradient-to-r from-navy-600 to-navy-800 rounded-full flex items-center justify-center mr-2">
+                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <span className="text-xs text-gray-500">AI Assistant</span>
+                  </div>
+                )}
+                <div className={`rounded-2xl px-4 py-3 ${
+                  message.type === 'user' 
+                    ? 'bg-gradient-to-r from-navy-600 to-navy-800 text-white' 
+                    : 'bg-white border border-gray-200 text-gray-800'
+                }`}>
+                  <p className="text-sm whitespace-pre-line">{message.text}</p>
+                  <div className={`text-xs mt-2 ${
+                    message.type === 'user' ? 'text-white/70' : 'text-gray-400'
+                  }`}>
+                    {message.time}
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
-
-          {/* リアルタイム処理インジケーター */}
-          <div className="mt-4 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg">
-            <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-blue-700">AI処理中</span>
-              <div className="flex space-x-1">
-                <div className={`w-2 h-2 bg-blue-500 rounded-full animate-bounce ${isProcessing ? 'opacity-100' : 'opacity-30'}`}></div>
-                <div className={`w-2 h-2 bg-blue-500 rounded-full animate-bounce ${!isProcessing ? 'opacity-100' : 'opacity-30'}`} style={{ animationDelay: '0.1s' }}></div>
-                <div className={`w-2 h-2 bg-blue-500 rounded-full animate-bounce ${isProcessing ? 'opacity-100' : 'opacity-30'}`} style={{ animationDelay: '0.2s' }}></div>
+            </div>
+          ))}
+          
+          {/* タイピングインジケーター */}
+          {isTyping && (
+            <div className="flex justify-start">
+              <div className="bg-white border border-gray-200 rounded-2xl px-4 py-3">
+                <div className="flex space-x-1">
+                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                  <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                </div>
               </div>
             </div>
+          )}
+        </div>
+
+        {/* 入力エリア */}
+        <div className="border-t border-gray-200 p-4 bg-white">
+          <div className="flex items-center space-x-3">
+            <div className="flex-1 relative">
+              <input 
+                type="text" 
+                placeholder="メッセージを入力..." 
+                className="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-navy-500 focus:border-transparent text-sm"
+                disabled
+              />
+            </div>
+            <button className="bg-gradient-to-r from-navy-600 to-navy-800 text-white p-2 rounded-full hover:from-navy-700 hover:to-navy-900 transition-all duration-300 disabled:opacity-50" disabled>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
