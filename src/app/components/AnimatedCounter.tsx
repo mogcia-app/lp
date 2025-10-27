@@ -19,7 +19,7 @@ export default function AnimatedCounter({
 }: AnimatedCounterProps) {
   const [count, setCount] = useState(0)
   const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -69,8 +69,8 @@ export default function AnimatedCounter({
   }, [isVisible, end, duration])
 
   return (
-    <div ref={ref} className={className}>
+    <span ref={ref} className={className}>
       {prefix}{count}{suffix}
-    </div>
+    </span>
   )
 }
