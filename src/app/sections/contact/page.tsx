@@ -155,7 +155,7 @@ export default function ContactPage() {
               </ul>
             </div>
             
-            <div>
+    <div>
               <h4 className="text-sm font-semibold mb-6 text-slate-200 uppercase tracking-wider">運営会社</h4>
               <ul className="space-y-4">
                 <li>
@@ -173,12 +173,12 @@ export default function ContactPage() {
                 &copy; 2025 upmo. All rights reserved.
               </p>
               <div className="flex items-center gap-8 text-sm text-slate-500">
-                <a href="#" className="hover:text-white transition-colors font-light">プライバシーポリシー</a>
-                <a href="#" className="hover:text-white transition-colors font-light">利用規約</a>
+                <a href="/sections/privacy" className="hover:text-white transition-colors font-light">プライバシーポリシー</a>
+                <a href="/sections/terms" className="hover:text-white transition-colors font-light">利用規約</a>
               </div>
             </div>
           </div>
-        </div>
+    </div>
       </footer>
       
       <Script src="https://sdk.form.run/js/v2/formrun.js" strategy="afterInteractive" />
