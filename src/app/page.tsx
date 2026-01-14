@@ -782,8 +782,8 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
             {/* スタンダードプラン */}
-            <div className="bg-white p-10 border-2 border-slate-200 rounded-lg hover:border-blue-300 hover:shadow-lg transition-all duration-300">
-              <div className="text-center mb-8">
+            <div className="bg-white p-10 border-2 border-slate-200 rounded-lg hover:border-blue-300 hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+              <div className="text-center mb-8 flex-1">
                 <h3 className="text-2xl font-semibold text-slate-900 mb-4">スタンダードプラン</h3>
                 <div className="mb-2">
                   <span className="text-4xl font-light text-slate-900">2,500</span>
@@ -797,23 +797,26 @@ export default function HomePage() {
                       <span className="text-blue-500 mt-1">•</span>
                       <span>基本機能が使用可能</span>
                     </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-500 mt-1">•</span>
+                      <span>チーム機能が使用可能</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-500 mt-1">•</span>
+                      <span>AI機能が使用可能</span>
+                    </li>
+                    
                   </ul>
                 </div>
               </div>
-              <a
-                href="/sections/contact"
-                className="block w-full bg-blue-600 text-white text-center py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
-              >
-                お問い合わせ
-              </a>
             </div>
 
             {/* プロフェッショナルプラン */}
-            <div className="bg-gradient-to-br from-blue-50 to-white p-10 border-2 border-blue-200 rounded-lg hover:border-blue-400 hover:shadow-xl transition-all duration-300 relative">
+            <div className="bg-gradient-to-br from-blue-50 to-white p-10 border-2 border-blue-200 rounded-lg hover:border-blue-400 hover:shadow-xl transition-all duration-300 relative h-full flex flex-col">
               <div className="absolute top-4 right-4">
                 <span className="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">おすすめ</span>
               </div>
-              <div className="text-center mb-8">
+              <div className="text-center mb-8 flex-1">
                 <h3 className="text-2xl font-semibold text-slate-900 mb-4">プロフェッショナルプラン</h3>
                 <div className="mb-2">
                   <span className="text-4xl font-light text-slate-900">5,000</span>
@@ -838,12 +841,6 @@ export default function HomePage() {
                   </ul>
                 </div>
               </div>
-              <a
-                href="/sections/contact"
-                className="block w-full bg-blue-600 text-white text-center py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
-              >
-                お問い合わせ
-              </a>
             </div>
           </div>
 
