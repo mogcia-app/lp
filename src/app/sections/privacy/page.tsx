@@ -1,148 +1,114 @@
-import Header from '@/app/components/Header'
-
 export default function PrivacyPage() {
   return (
-    <>
-      <Header />
-      <div className="min-h-screen bg-slate-50 py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg shadow-sm border border-slate-200 p-8 md:p-12">
-            <div className="mb-8">
-              <h1 className="text-4xl md:text-5xl font-light text-slate-900 mb-4 tracking-tight">プライバシーポリシー</h1>
-              <p className="text-slate-600 leading-relaxed font-light">
-                最終更新日: 2025年11月1日
+    <main className="min-h-screen bg-white text-slate-900">
+      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white">
+        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+          <a href="/" className="text-2xl font-black text-[#004aad]">
+            upmo
+          </a>
+          <a href="/" className="text-sm font-semibold text-slate-600 hover:text-[#004aad]">
+            トップへ戻る
+          </a>
+        </div>
+      </header>
+
+      <section className="border-b border-slate-200 bg-[#f8fbff] py-14">
+        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+          <p className="mb-2 text-xs font-bold tracking-[0.16em] text-[#004aad]">PRIVACY POLICY</p>
+          <h1 className="text-4xl font-black text-slate-900 sm:text-5xl">プライバシーポリシー</h1>
+          <p className="mt-3 text-sm text-slate-600">最終更新日: 2025年11月1日</p>
+        </div>
+      </section>
+
+      <section className="py-14">
+        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="space-y-8 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-slate-900">1. 基本方針</h2>
+              <p className="text-sm leading-relaxed text-slate-700">
+                株式会社MOGCIA（以下「当社」）は、upmoの提供にあたり、個人情報の保護を重要な責務と考え、
+                個人情報保護法その他の関連法令を遵守し、適切に取り扱います。
               </p>
-            </div>
+            </section>
 
-            <div className="prose prose-slate max-w-none">
-              <div className="space-y-8 text-slate-700 leading-relaxed">
-                <section>
-                  <h2 className="text-2xl font-semibold text-slate-900 mb-4">1. はじめに</h2>
-                  <p className="mb-4">
-                    株式会社MOGCIA（以下「当社」といいます）は、お客様の個人情報の保護を重要な責務と考えております。本プライバシーポリシーは、当社が提供するサービス（以下「本サービス」といいます）において、お客様の個人情報をどのように取り扱うかについて説明するものです。
-                  </p>
-                </section>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-slate-900">2. 取得する情報</h2>
+              <ul className="space-y-1.5 text-sm text-slate-700">
+                <li>・会社名、氏名、メールアドレス、電話番号などのお問い合わせ情報</li>
+                <li>・お問い合わせ内容、資料請求内容、商談時に提供いただく情報</li>
+                <li>・サービス利用状況、ログ情報、アクセス情報（Cookie等を含む）</li>
+              </ul>
+            </section>
 
-                <section>
-                  <h2 className="text-2xl font-semibold text-slate-900 mb-4">2. 収集する個人情報</h2>
-                  <p className="mb-4">当社は、本サービスの提供にあたり、以下の個人情報を収集する場合があります：</p>
-                  <ul className="list-disc pl-6 space-y-2 mb-4">
-                    <li>氏名、会社名、部署名</li>
-                    <li>メールアドレス、電話番号</li>
-                    <li>お問い合わせ内容</li>
-                    <li>サービス利用に関する情報（ログ情報、利用状況など）</li>
-                    <li>その他、サービス提供に必要な情報</li>
-                  </ul>
-                </section>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-slate-900">3. 利用目的</h2>
+              <ul className="space-y-1.5 text-sm text-slate-700">
+                <li>・サービス提供、本人確認、運用サポート</li>
+                <li>・お問い合わせ対応、資料送付、連絡</li>
+                <li>・サービス改善、品質向上、障害対応</li>
+                <li>・不正利用防止およびセキュリティ確保</li>
+                <li>・法令に基づく対応</li>
+              </ul>
+            </section>
 
-                <section>
-                  <h2 className="text-2xl font-semibold text-slate-900 mb-4">3. 個人情報の利用目的</h2>
-                  <p className="mb-4">当社は、収集した個人情報を以下の目的で利用します：</p>
-                  <ul className="list-disc pl-6 space-y-2 mb-4">
-                    <li>本サービスの提供、運営、改善</li>
-                    <li>お客様への連絡、サポートの提供</li>
-                    <li>お客様からのお問い合わせへの対応</li>
-                    <li>利用規約や法令等に違反する行為への対応</li>
-                    <li>その他、上記利用目的に付随する目的</li>
-                  </ul>
-                </section>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-slate-900">4. 第三者提供</h2>
+              <p className="text-sm leading-relaxed text-slate-700">
+                当社は、法令に基づく場合を除き、本人の同意なく個人情報を第三者に提供しません。
+              </p>
+            </section>
 
-                <section>
-                  <h2 className="text-2xl font-semibold text-slate-900 mb-4">4. 個人情報の管理</h2>
-                  <p className="mb-4">
-                    当社は、お客様の個人情報を適切に管理し、漏洩、滅失、毀損の防止その他の安全管理のため、必要かつ適切な措置を講じます。
-                  </p>
-                </section>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-slate-900">5. 委託先管理</h2>
+              <p className="text-sm leading-relaxed text-slate-700">
+                業務遂行に必要な範囲で外部事業者に委託する場合、当社は委託先を適切に選定し、必要な監督を行います。
+              </p>
+            </section>
 
-                <section>
-                  <h2 className="text-2xl font-semibold text-slate-900 mb-4">5. 個人情報の第三者提供</h2>
-                  <p className="mb-4">
-                    当社は、法令に基づく場合を除き、お客様の同意なく、個人情報を第三者に提供することはありません。
-                  </p>
-                </section>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-slate-900">6. 安全管理措置</h2>
+              <p className="text-sm leading-relaxed text-slate-700">
+                当社は、個人情報への不正アクセス、漏えい、滅失、毀損を防止するため、アクセス制御、権限管理、
+                技術的・組織的安全管理措置を講じます。
+              </p>
+            </section>
 
-                <section>
-                  <h2 className="text-2xl font-semibold text-slate-900 mb-4">6. 個人情報の開示・訂正・削除</h2>
-                  <p className="mb-4">
-                    お客様は、当社が保有する個人情報について、開示、訂正、削除を求めることができます。これらのご請求については、下記のお問い合わせ先までご連絡ください。
-                  </p>
-                </section>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-slate-900">7. 開示・訂正・削除等の請求</h2>
+              <p className="text-sm leading-relaxed text-slate-700">
+                ご本人からの開示・訂正・利用停止・削除等のご請求は、合理的な範囲で速やかに対応します。
+              </p>
+            </section>
 
-                <section>
-                  <h2 className="text-2xl font-semibold text-slate-900 mb-4">7. Cookie（クッキー）の使用</h2>
-                  <p className="mb-4">
-                    当社は、本サービスの提供にあたり、Cookieを使用する場合があります。Cookieは、お客様のブラウザに保存される小さなテキストファイルです。お客様は、ブラウザの設定によりCookieの使用を拒否することができますが、その場合、本サービスの一部機能が利用できなくなる可能性があります。
-                  </p>
-                </section>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-slate-900">8. 改定</h2>
+              <p className="text-sm leading-relaxed text-slate-700">
+                本ポリシーは必要に応じて改定することがあります。改定後は本ページに掲載した時点で効力を生じます。
+              </p>
+            </section>
 
-                <section>
-                  <h2 className="text-2xl font-semibold text-slate-900 mb-4">8. プライバシーポリシーの変更</h2>
-                  <p className="mb-4">
-                    当社は、必要に応じて本プライバシーポリシーを変更することがあります。変更後のプライバシーポリシーは、本ページに掲載した時点で効力を生じるものとします。
-                  </p>
-                </section>
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-slate-900">9. お問い合わせ窓口</h2>
+              <p className="text-sm leading-relaxed text-slate-700">
+                個人情報の取り扱いに関するお問い合わせは
+                <a href="/sections/contact" className="ml-1 font-semibold text-[#004aad] underline underline-offset-2">
+                  お問い合わせページ
+                </a>
+                よりご連絡ください。
+              </p>
+            </section>
+          </div>
 
-                <section>
-                  <h2 className="text-2xl font-semibold text-slate-900 mb-4">9. お問い合わせ</h2>
-                  <p className="mb-4">
-                    個人情報の取り扱いに関するお問い合わせは、<a href="/sections/contact" className="text-blue-600 hover:text-blue-700 underline">お問い合わせフォーム</a>よりご連絡ください。
-                  </p>
-                </section>
-              </div>
-            </div>
+          <div className="mt-6 flex flex-wrap gap-4 text-sm font-semibold">
+            <a href="/sections/terms" className="text-[#004aad] underline underline-offset-2">
+              利用規約を見る
+            </a>
+            <a href="https://www.mogcia.net/" target="_blank" rel="noopener noreferrer" className="text-[#004aad] underline underline-offset-2">
+              運営会社
+            </a>
           </div>
         </div>
-      </div>
-      
-      {/* Footer */}
-      <footer className="bg-slate-950 text-white py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-16 mb-16">
-            <div>
-              <h3 className="text-3xl font-semibold text-white mb-6">upmo</h3>
-              <p className="text-slate-400 text-base leading-relaxed font-light">
-                AIを社内のもう1人のアシスタントに<br />
-                探すより、見つかる環境を
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="text-sm font-semibold mb-6 text-slate-200 uppercase tracking-wider">サポート</h4>
-              <ul className="space-y-4">
-                <li>
-                  <a href="/sections/contact" className="text-slate-400 hover:text-white transition-colors font-light text-base">
-                    お問い合わせ
-                  </a>
-                </li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-sm font-semibold mb-6 text-slate-200 uppercase tracking-wider">運営会社</h4>
-              <ul className="space-y-4">
-                <li>
-                  <a href="https://www.mogcia.net/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors font-light text-base">
-                    会社情報
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-slate-800 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-              <p className="text-slate-500 text-sm font-light">
-                &copy; 2025 upmo. All rights reserved.
-              </p>
-              <div className="flex items-center gap-8 text-sm text-slate-500">
-                <a href="/sections/privacy" className="hover:text-white transition-colors font-light">プライバシーポリシー</a>
-                <a href="/sections/terms" className="hover:text-white transition-colors font-light">利用規約</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </>
+      </section>
+    </main>
   )
 }
-
