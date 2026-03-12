@@ -5,8 +5,8 @@ export const metadata: Metadata = {
   title: 'upmo',
   description: 'AIを社内のもう1人のアシスタントに',
   icons: {
-    icon: '/upmo.png',
-    apple: '/upmo.png',
+    icon: '/upmologo.png',
+    apple: '/upmologo.png',
   },
 }
 

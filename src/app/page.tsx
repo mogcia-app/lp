@@ -102,8 +102,9 @@ export default function HomePage() {
     <main className="bg-white text-slate-900">
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white">
         <div className="mx-auto flex w-full max-w-6xl items-center px-4 py-4 sm:px-6 lg:px-8">
-          <a href="#" className="text-2xl font-black text-[#004aad]">
-            upmo
+          <a href="#" className="flex items-center gap-2 text-2xl font-black text-[#004aad]">
+            <img src="/upmologo1.png" alt="upmo logo" className="h-8 w-8 object-contain" />
+            <span>upmo</span>
           </a>
           <div className="ml-auto">
             <a href="/sections/contact" className="rounded-md bg-[#004aad] px-4 py-2 text-sm font-bold text-white hover:bg-[#003b8a]">
